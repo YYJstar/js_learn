@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>寄生式继承</title>
+  </head>
+  <body>
+    <script>
+      //关键1——跟原型式继承一样，基于已有的对象创建新对象
+      function objectCopy(obj) {
+        function Fun() {}
+        Fun.prototype = obj;
+        return new Fun();
+      }
+
+      //关键2——在创建的新对象上添加方法
+      function createAnother(original) {
+        let clone = objectCopy(original);
+        clone.getName = function () {
+          console.log(this.name);
+        };
+        return clone;
+      }
+
+      let person = {
+        name: "yhd",
+        friends: ["rose", "tom", "jack"],
+      };
+
+      let person1 = createAnother(person);
+      person1.friends.push("lily");
+      console.log(person1.friends);
+      person1.getName(); // yhd
+
+      let person2 = createAnother(person);
+      console.log(person2.friends); // ["rose", "tom", "jack", "lily"]
+    </script>
+  </body>
+</html>

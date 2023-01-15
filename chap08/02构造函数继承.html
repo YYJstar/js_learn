@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>构造函数继承</title>
+  </head>
+  <body>
+    <script>
+      function Parent() {
+        this.info = {
+          name: "abc",
+          age: 18,
+        };
+      }
+
+      //关键———在子类型的构造函数中调用父类型的构造函数
+      function Child() {
+        Parent.call(this);
+      }
+
+      let child1 = new Child();
+      child1.info.gender = "male";
+      console.log(child1.info); //{name:'abc',age:18,gender:'male'}
+
+      let child2 = new Child();
+      console.log(child2.info); //{name:'abc',age:18}
+    </script>
+  </body>
+</html>

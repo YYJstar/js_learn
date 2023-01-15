@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map</title>
+  </head>
+  <body>
+    <script>
+      let map = new Map([
+        ["name", "Jack"],
+        ["age", 18],
+      ]);
+      console.log(map);
+      //1.set() 设置键值对
+      map.set("job", "student");
+      console.log(map);
+      //2.has() 键值是否存在
+      console.log(map.has("name")); //true
+      //3.get() 获取对应键值的值
+      console.log(map.get("age")); //18
+      //4.size 键值对个数
+      console.log(map.size); //3
+    </script>
+  </body>
+</html>

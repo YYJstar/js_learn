@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原型链继承</title>
+  </head>
+  <body>
+    <script>
+      //原型链实现继承
+      function Parent() {
+        this.isShow = true;
+        this.info = {
+          name: "abc",
+          age: 18,
+        };
+      }
+
+      Parent.prototype.getInfo = function () {
+        console.log(this.info);
+        console.log(this.isShow);
+      };
+
+      function Child() {}
+      //关键———创建Parent的实例，并将该实例赋值给Child.prototype
+      Child.prototype = new Parent();
+      let child1 = new Child();
+      child1.info.gender = "male";
+      child1.getInfo(); //{name:'abc',age:18,gender:'male'}
+      let child2 = new Child();
+      child2.getInfo(); //{name:'abc',age:18,gender:'male'}
+    </script>
+  </body>
+</html>

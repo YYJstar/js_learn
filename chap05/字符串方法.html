@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>字符串方法</title>
+  </head>
+  <body>
+    <script>
+      //1.concat()——用于将一个或多个字符串拼接成一个新字符串
+      let str1 = "hello";
+      let res1 = str1.concat(" world");
+      console.log(res1);
+      //2.slice() substr() substring() 从字符串中提取子字符串
+      let str2 = "hello world";
+      console.log(str2.slice(3)); // "lo world"
+      console.log(str2.substring(3)); // "lo world"
+      console.log(str2.substr(3)); // "lo world"
+      console.log(str2.slice(3, 7)); // "lo w"
+      console.log(str2.substring(3, 7)); // "lo w"
+      console.log(str2.substr(3, 7)); // "lo worl"
+      //3.indexOf lastIndexOf() 查找第一个/最后一个字符的位置
+      let str3 = "hello javaScript";
+      console.log(str3.indexOf("a")); //7
+      console.log(str3.lastIndexOf("a")); //9
+      //4.includes() startsWith() endsWith() 是否包含/以开头.以结尾
+      let str4 = "rabbit";
+      console.log(str4.includes("abb")); //true
+      console.log(str4.startsWith("ra")); //true
+      console.log(str4.endsWith("ra")); //false
+      //5.trim() trimLeft() trimRight() 清空首尾/首/尾空字符串，不改变原字符
+      let str5 = "  hello world  ";
+      console.log(str5.trim()); //"hello world"
+      console.log(str5.trimLeft()); //"hello world  "
+      console.log(str5.trimRight()); //"  hello world"
+      //6.repeat() 重复字符串
+      let str6 = "ha";
+      console.log(str6.repeat(5)); //"hahahahaha"
+      //7.padStart(l,s) padEnd(l,s) 字符串小于长度l，以字符s填充
+      let str7 = "xixi";
+      console.log(str7.padStart(8, "ha")); //hahaxixi
+      console.log(str7.padEnd(8, "ha")); //xixihaha
+      //8.toLowerCase() toUpperCase() 转为小写/大写
+      let str8 = "Hello World";
+      console.log(str8.toLowerCase()); //"hello world"
+      console.log(str8.toUpperCase()); //"HELLO WORLD"
+    </script>
+  </body>
+</html>
