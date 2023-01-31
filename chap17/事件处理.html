@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myBtn">点击</button>
+    <script>
+      //DOM0事件处理程序
+      const btn = document.getElementById("myBtn");
+      btn.onclick = function (event) {
+        console.log("clicked");
+        //输出事件类型
+        console.log(event.type); //click
+      };
+      //DOM2事件处理程序
+      btn.addEventListener(
+        "click",
+        (event) => {
+          console.log("clicked DOM2");
+          //输出事件类型
+          console.log(event.type); //click
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="myLinks">
+      <li id="goSomewhere">Go somewhere</li>
+      <li id="doSomething">Do something</li>
+      <li id="sayHi">Say hi</li>
+    </ul>
+    <script>
+      //采用事件委托
+      let list = document.getElementById("myLinks");
+      list.addEventListener("click", (event) => {
+        const target = event.target;
+        switch (target.id) {
+          case "doSomething":
+            document.title = "change the title";
+            break;
+          case "goSomewhere":
+            location.href = "https://www.mihoyo.com/";
+            break;
+          case "sayHi":
+            console.log("hi");
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
